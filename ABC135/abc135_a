@@ -1,0 +1,27 @@
+using System;
+
+namespace Atcoder
+{
+    class Program
+    {
+        static void ABC135a()
+        {
+            string s = Console.ReadLine();
+            string[] number = s.Split(' ');
+            int a = int.Parse(number[0]);
+            int b = int.Parse(number[1]);
+            int k = 0;
+
+            if ((a + b) % 2 == 0)
+            {
+                k = (a + b) / 2;
+                Console.WriteLine(k);
+            }
+            else
+            {
+                Console.WriteLine("IMPOSSIBLE");
+            }
+
+        }
+    }
+}

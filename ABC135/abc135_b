@@ -1,0 +1,35 @@
+using System;
+using System.Linq;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void ABC135b()
+        {
+            string n = Console.ReadLine();
+            string s = Console.ReadLine();
+            string[] number = s.Split(' ');
+            int[] numberList = number.Select(x => int.Parse(x)).ToArray();
+
+            int[] sortList = numberList.OrderBy(x => x).ToArray();
+            int flg = 0;
+            for (int i = 0; i < number.Length; i++)
+            {
+                if (numberList[i] != sortList[i])
+                {
+                    flg++;
+                }
+            }
+
+            if (flg == 0 || flg == 2)
+            {
+                Console.WriteLine("YES");
+            }
+            else
+            {
+                Console.WriteLine("NO");
+            }
+        }
+    }
+}

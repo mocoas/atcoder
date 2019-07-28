@@ -9,3 +9,14 @@ C:\workspace\atcorder\bin\Debug\netcoreapp2.1\atcorder.dll
 C:\workspace\atcorder\bin\Debug\netcoreapp2.1\atcorder.pdb
 C:\workspace\atcorder\obj\Debug\netcoreapp2.1\atcorder.dll
 C:\workspace\atcorder\obj\Debug\netcoreapp2.1\atcorder.pdb
+C:\workspace\atcoder\bin\Debug\netcoreapp2.1\atcorder.deps.json
+C:\workspace\atcoder\bin\Debug\netcoreapp2.1\atcorder.runtimeconfig.json
+C:\workspace\atcoder\bin\Debug\netcoreapp2.1\atcorder.runtimeconfig.dev.json
+c:\workspace\atcoder\bin\Debug\netcoreapp2.1\atcorder.dll
+c:\workspace\atcoder\bin\Debug\netcoreapp2.1\atcorder.pdb
+c:\workspace\atcoder\obj\Debug\netcoreapp2.1\atcorder.csprojAssemblyReference.cache
+c:\workspace\atcoder\obj\Debug\netcoreapp2.1\atcorder.csproj.CoreCompileInputs.cache
+c:\workspace\atcoder\obj\Debug\netcoreapp2.1\atcorder.AssemblyInfoInputs.cache
+c:\workspace\atcoder\obj\Debug\netcoreapp2.1\atcorder.AssemblyInfo.cs
+c:\workspace\atcoder\obj\Debug\netcoreapp2.1\atcorder.dll
+c:\workspace\atcoder\obj\Debug\netcoreapp2.1\atcorder.pdb
