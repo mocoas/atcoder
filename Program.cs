@@ -7,7 +7,45 @@ namespace atcoder
     {
         static void Main(string[] args)
         {
-            PracticeC.test();
+            PracticeD.test();
+        }
+    }
+
+    class PracticeD
+    {
+        public static void test()
+        {
+            int n = Input.getInt();
+            int[] list = Input.getIntArray();
+
+            int cnt = 0;
+            while(list.All(x => x%2==0))
+            {
+                list = list.Select(x=>x/2).ToArray();
+                cnt++;
+            }
+            Console.WriteLine(cnt);
+        }
+    }
+
+    class Input
+    {
+        public static int getInt()
+        {
+            int i = int.Parse(Console.ReadLine());
+            return i;
+        }
+
+        public static string getString()
+        {
+            string s = Console.ReadLine();
+            return s;
+        }
+        public static int[] getIntArray()
+        {
+            string[] s = Console.ReadLine().Split(' ');
+            int[] num = s.Select(x=>int.Parse(x)).ToArray();
+            return num;
         }
     }
 
@@ -29,20 +67,6 @@ namespace atcoder
         }
     }
 
-    class Input
-    {
-        public static string getString()
-        {
-            string s = Console.ReadLine();
-            return s;
-        }
-        public static int[] getIntArray()
-        {
-            string[] s = Console.ReadLine().Split(' ');
-            int[] num = s.Select(x=>int.Parse(x)).ToArray();
-            return num;
-        }
-    }
 
     class PracticeB
     {
