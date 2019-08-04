@@ -7,56 +7,73 @@ namespace atcoder
     {
         static void Main(string[] args)
         {
-            A.FiftyFifty();
+            B.OrdinaryNumber();
         }
     }
 
-    class A
+    class B
     {
-        public static void Dodecagon()
+        public static void OrdinaryNumber()
         {
-            int r = Input.getInt();
-            int d = 3 * r * r ;
-            Output.writeInt(d);   
+            int n = Input.getInt();
+            int[] p = Input.getIntArray();
+
+            int cnt = 0;
+            for(int i=1; i<n-1; i++)
+            {
+                if(p[i-1]<p[i] && p[i]<p[i+1] || p[i-1]>p[i] && p[i]>p[i+1]) cnt ++;                
+            }
+
+            Output.writeInt(cnt);
+        }
+        public static void BiteEating()
+        {
+            int[] a = Input.getIntArray();
+            int apple = a[0];
+            int taste = a[1];
+            int preApplepie = 0;
+
+            for(int i = 1; i <= apple; i++)
+            {
+                preApplepie = preApplepie + (taste + i - 1);
+            }
+
+            int tmp = 0;
+            int applepie;
+            int result=0;            
+            for(int i = 1; i<= apple; i++)
+            {   
+                applepie = preApplepie - (taste + i -1 );
+                int abs = Math.Abs(preApplepie - applepie);
+
+                if(i==1)
+                {
+                    tmp = abs;
+                    result = applepie;
+                }
+                else if(tmp > abs)
+                {
+                    tmp = abs;
+                    result = applepie;
+                }                    
+            }
+
+            Output.writeInt(result);
         }
 
-        public static void TorT()
+        public static void GoldenApple()
         {
             int[] num = Input.getIntArray();
-            int train = num[0] * num[1];
-            if(train>num[2]) 
-            {
-                Output.writeInt(num[2]);
-            }
-            else{
-                Output.writeInt(train);
-            }
-        }
-        public static void FiftyFifty()
-        {
-            string s = Input.getString();
+            decimal n = num[0];
+            decimal d = num[1];
+            int human = 0;
 
-            if(s[0] == s[1] && s[1] == s[2])
-            {
-                Console.WriteLine("No");
-            }
-            else if ( s[0] == s[1]  &&  s[2] == s[3] )
-            {
-                Console.WriteLine("Yes");
-            }
-            else if( s[1] == s[2] && s[0] == s[3])
-            {
-                Console.WriteLine("Yes");
-            }
-            else if( s[0] == s[2] && s[1] == s[3])
-            {
-                Console.WriteLine("Yes");
-            }
-            else
-            {
-                Console.WriteLine("No");
-            } 
+            // ++ * ++ ++ * ++ ++ * ++
+            
+            human = decimal.ToInt32(Math.Ceiling(n / (d + d + 1)));
+            Output.writeInt(human);
         }
+
     }
   
     class Input
