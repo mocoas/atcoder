@@ -8,28 +8,80 @@ namespace atcoder
     {
         static void Main(string[] args)
         {
-            C.AntiDivision();
+            if(ABC136.BuildStairs())
+            {
+                Console.WriteLine("Yes");
+            }
+            else
+            {
+                Console.WriteLine("No");
+            }
         }
     }
 
-    class C
+    class ABC136
     {
-        public static void AntiDivision()
+        public static bool BuildStairs()
         {
-            long[] num = Input.getLongArray();
-            long a = num[0];
-            long b = num[1];
-            int c = (int)(long)num[2];
-            int d = (int)(long)num[3];
-            long cd = Calc.Lcm(c,d);
-
-            long cntAll = b-a+1;
-            long cntC = (long)Math.Floor((decimal)b/c) - (long)Math.Ceiling((decimal)a/c) + 1;
-            long cntD = (long)Math.Floor((decimal)b/d) - (long)Math.Ceiling((decimal)a/d) + 1;
-            long cntCD = (long)Math.Floor((decimal)b/cd) - (long)Math.Ceiling((decimal)a/cd) + 1;
-
-            Console.WriteLine(cntAll-(cntC+cntD-cntCD));
+            int n = Input.getInt();
+            long[] h = Input.getLongArray();
+            int cnt = 0;
+            int left = 0;
+            int right;
+            while(left+1<n)
+            {
+                right = left + 1;
+                while(right<n)
+                {
+                    if(h[left]<=h[right])
+                    {
+                        left = right;
+                        right ++;
+                    }
+                    else if(h[left]-h[right]>=2)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        left = right;
+                        right++;
+                        cnt ++;
+                        if(cnt>=2)
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }             
+            return true;
         }
+
+        public static void UnevenNumbers()
+        {
+            int n = Input.getInt();
+            int cnt = 0;
+            if(n<10) cnt = n%10;
+            if(10<= n && n < 100)
+            {                
+                cnt = 9;
+            }
+            if(100<= n && n <1000)
+            {
+                cnt = n- 99 + 9;
+            } 
+            if(1000<= n && n<10000)
+            {
+                cnt = 999 - 99 + 9;
+            }
+            if(10000<=n && n<100000)
+            {
+                cnt = n - 9999 + 999 - 99 + 9;
+            }
+            if(n==100000) cnt = 99999-9999+999-99+9;
+            Console.WriteLine(cnt);
+        }
+
     }
   
     class Input
