@@ -7,27 +7,58 @@ namespace atcoder
     {
         static void Main(string[] args)
         {
-            PracticeD.test();
+            A.FiftyFifty();
         }
     }
 
-    class PracticeD
+    class A
     {
-        public static void test()
+        public static void Dodecagon()
         {
-            int n = Input.getInt();
-            int[] list = Input.getIntArray();
+            int r = Input.getInt();
+            int d = 3 * r * r ;
+            Output.writeInt(d);   
+        }
 
-            int cnt = 0;
-            while(list.All(x => x%2==0))
+        public static void TorT()
+        {
+            int[] num = Input.getIntArray();
+            int train = num[0] * num[1];
+            if(train>num[2]) 
             {
-                list = list.Select(x=>x/2).ToArray();
-                cnt++;
+                Output.writeInt(num[2]);
             }
-            Console.WriteLine(cnt);
+            else{
+                Output.writeInt(train);
+            }
+        }
+        public static void FiftyFifty()
+        {
+            string s = Input.getString();
+
+            if(s[0] == s[1] && s[1] == s[2])
+            {
+                Console.WriteLine("No");
+            }
+            else if ( s[0] == s[1]  &&  s[2] == s[3] )
+            {
+                Console.WriteLine("Yes");
+            }
+            else if( s[1] == s[2] && s[0] == s[3])
+            {
+                Console.WriteLine("Yes");
+            }
+            else if( s[0] == s[2] && s[1] == s[3])
+            {
+                Console.WriteLine("Yes");
+            }
+            else
+            {
+                Console.WriteLine("No");
+            } 
         }
     }
-
+  
     class Input
     {
         public static int getInt()
@@ -49,56 +80,11 @@ namespace atcoder
         }
     }
 
-    class PracticeC
+    class Output
     {
-        public static void test()
+        public static void writeInt(int i)
         {
-            char[] s = Input.getString().ToCharArray();
-            int result = 0;
-            
-            for (int i = 0; i<s.Length; i++)
-            {
-                if(s[i]=='1')
-                {
-                    result ++;
-                }
-            }
-            Console.WriteLine(result);
+            Console.WriteLine(i);
         }
     }
-
-
-    class PracticeB
-    {
-        public static void test()
-        {
-            string[] s = Console.ReadLine().Split(' ');
-            int[] num = s.Select(x=>int.Parse(x)).ToArray();
-
-            if(num[0]%2==0 || num[1]%2==0)
-            {
-                Console.WriteLine("Even");
-            }
-            else
-            {
-                Console.WriteLine("Odd");
-            }
-        }
-    }
-    class PracticeA
-    {
-        public static void test()
-        {
-            int a = int.Parse(Console.ReadLine());
-            string[] b = Console.ReadLine().Split(' ');
-            int[] bc = b.Select(x=>int.Parse(x)).ToArray();
-            string s = Console.ReadLine();
-            
-            
-            int abc = a + bc[0]+bc[1];
-            var result = abc + " " + s;   
-            Console.WriteLine(result);
-        }
-    }
-    
 }
