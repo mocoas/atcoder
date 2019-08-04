@@ -7,12 +7,50 @@ namespace atcoder
     {
         static void Main(string[] args)
         {
-            B.OrdinaryNumber();
+            B.GoodDistance();
         }
     }
 
     class B
     {
+        public static void GoodDistance()
+        {
+            int[] num = Input.getIntArray();
+            int n = num[0];
+            int d = num[1];
+            int[,] point = new int[n,d];
+            for(int i=0; i<n; i++)
+            {
+                int[] temp = Input.getIntArray();
+                for(int j=0; j<d; j++)
+                {
+                    point[i,j] = temp[j];
+                }
+            }
+
+            int cnt =0;
+            for(int i=0; i<n; i++)
+            {
+                for(int j=i+1; j<n; j++)
+                {
+                    double route =0;
+ 
+                    for(int k=0; k<d; k++)
+                    {
+                        double tmp = Math.Pow(Math.Abs(point[i,k]-point[j,k]),2);
+                        route += tmp;
+                    }
+                    
+                    double result = Math.Sqrt(route);
+                    if(route == Math.Pow(Math.Floor(result),2))
+                    {
+                        cnt ++;
+                    }
+                }
+            }
+
+            Output.writeInt(cnt);
+        }
         public static void OrdinaryNumber()
         {
             int n = Input.getInt();
