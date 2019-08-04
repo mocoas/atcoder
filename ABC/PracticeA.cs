@@ -3,12 +3,12 @@ using System.Linq;
 
 namespace atcoder.ABC.A
 {
-    class Program
+    class ProgramA
     {
         public static void ABC()
         {
             A.FiftyFifty();
-        }
+        }                                       
     }
 
     class A
