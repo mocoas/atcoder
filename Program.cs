@@ -25,7 +25,6 @@ namespace atcoder
         {
             int n = Input.getInt();
             long[] h = Input.getLongArray();
-            int cnt = 0;
             int left = 0;
             int right;
             while(left+1<n)
@@ -41,16 +40,6 @@ namespace atcoder
                     else if(h[left]-h[right]>=2)
                     {
                         return false;
-                    }
-                    else
-                    {
-                        left = right;
-                        right++;
-                        cnt ++;
-                        if(cnt>=2)
-                        {
-                            return false;
-                        }
                     }
                 }
             }             
