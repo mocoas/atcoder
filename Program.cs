@@ -25,10 +25,16 @@ namespace atcoder
         {
             int n = Input.getInt();
             long[] h = Input.getLongArray();
+<<<<<<< HEAD
             
             if(n==1) return true;
 
             for(int i=n-1; i>0; i--)
+=======
+            int left = 0;
+            int right;
+            while(left+1<n)
+>>>>>>> eeda3495362a1101474f045c1118167e764231fa
             {
                 if(h[i-1]-h[i]==1)
                 {
@@ -36,7 +42,19 @@ namespace atcoder
                 }
                 if(h[i-1]-h[i]>0)
                 {
+<<<<<<< HEAD
                     return false;
+=======
+                    if(h[left]<=h[right])
+                    {
+                        left = right;
+                        right ++;
+                    }
+                    else if(h[left]-h[right]>=2)
+                    {
+                        return false;
+                    }
+>>>>>>> eeda3495362a1101474f045c1118167e764231fa
                 }
             }
 
