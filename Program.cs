@@ -25,35 +25,21 @@ namespace atcoder
         {
             int n = Input.getInt();
             long[] h = Input.getLongArray();
-            int cnt = 0;
-            int left = 0;
-            int right;
-            while(left+1<n)
+            
+            if(n==1) return true;
+
+            for(int i=n-1; i>0; i--)
             {
-                right = left + 1;
-                while(right<n)
+                if(h[i-1]-h[i]==1)
                 {
-                    if(h[left]<=h[right])
-                    {
-                        left = right;
-                        right ++;
-                    }
-                    else if(h[left]-h[right]>=2)
-                    {
-                        return false;
-                    }
-                    else
-                    {
-                        left = right;
-                        right++;
-                        cnt ++;
-                        if(cnt>=2)
-                        {
-                            return false;
-                        }
-                    }
+                    h[i-1] = h[i-1]-1;        
                 }
-            }             
+                if(h[i-1]-h[i]>0)
+                {
+                    return false;
+                }
+            }
+
             return true;
         }
 
