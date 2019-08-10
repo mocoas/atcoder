@@ -8,86 +8,84 @@ namespace atcoder
     {
         static void Main(string[] args)
         {
-            if(ABC136.BuildStairs())
+            ABC137.GreenBin();
+        }
+    }
+
+    class ABC137
+    {
+        public static void GreenBin()
+        {
+            int n = int.Parse(Console.ReadLine());
+            var s = Input.getStringArray(n);
+            for(int i=0; i<n; i++)
             {
-                Console.WriteLine("Yes");
+                var a = s[i].ToCharArray();
+                Array.Sort(a);
+                string str = new string (a);
+                s[i] = str;                
+            }
+
+            var result = s.GroupBy(x=>x).Where(x=>x.Count()>1).Select(x=> new {number = x.Key, cnt=x.Count() -1}).ToList();
+            //long allCount = result.Sum(x=>x.Count*(x.Count-1)/2);
+            Console.WriteLine(result.Count());
+        }
+        public static void OneClue()
+        {
+            var num = Input.getIntArray();
+            if(num[0]==1)
+            {
+                Console.Write(num[1]);
             }
             else
             {
-                Console.WriteLine("No");
+                int a = num[1]-num[0]+1;
+                int b = num[1]+num[0]-1;
+                for(int i=a; i<=b; i++)
+                {
+                    if(i==b)
+                    {
+                        Console.Write(i);
+                    } 
+                    else
+                    {
+                        Console.Write(i+" ");
+                    }                    
+                } 
             }
+        }
+        public static void plus()
+        {
+            var i = Input.getIntArray();
+            int[] a = {i[0] + i[1], i[0] - i[1], i[0] * i[1]};
+            Console.WriteLine(a.Max());
         }
     }
 
-    class ABC136
-    {
-        public static bool BuildStairs()
-        {
-            int n = Input.getInt();
-            long[] h = Input.getLongArray();
-<<<<<<< HEAD
-            
-            if(n==1) return true;
-
-            for(int i=n-1; i>0; i--)
-=======
-            int left = 0;
-            int right;
-            while(left+1<n)
->>>>>>> eeda3495362a1101474f045c1118167e764231fa
-            {
-                if(h[i-1]-h[i]==1)
-                {
-                    h[i-1] = h[i-1]-1;        
-                }
-                if(h[i-1]-h[i]>0)
-                {
-<<<<<<< HEAD
-                    return false;
-=======
-                    if(h[left]<=h[right])
-                    {
-                        left = right;
-                        right ++;
-                    }
-                    else if(h[left]-h[right]>=2)
-                    {
-                        return false;
-                    }
->>>>>>> eeda3495362a1101474f045c1118167e764231fa
-                }
-            }
-
-            return true;
-        }
-
-        public static void UnevenNumbers()
-        {
-            int n = Input.getInt();
-            int cnt = 0;
-            if(n<10) cnt = n%10;
-            if(10<= n && n < 100)
-            {                
-                cnt = 9;
-            }
-            if(100<= n && n <1000)
-            {
-                cnt = n- 99 + 9;
-            } 
-            if(1000<= n && n<10000)
-            {
-                cnt = 999 - 99 + 9;
-            }
-            if(10000<=n && n<100000)
-            {
-                cnt = n - 9999 + 999 - 99 + 9;
-            }
-            if(n==100000) cnt = 99999-9999+999-99+9;
-            Console.WriteLine(cnt);
-        }
-
-    }
   
+    class Output
+    {
+        public static void writeIntArraySprit(int[] array)
+        {
+            for(int i=0; i<array.Length; i++)
+            {
+                if(i == array.Length-1)
+                {
+                    Console.Write(i);
+                }
+                else
+                {
+                    Console.Write(i+" ");    
+                }
+                
+            }
+        }
+        public static void writeInt(int i)
+        {
+            Console.WriteLine(i);
+        }
+    }
+
     class Input
     {
         public static int getInt()
@@ -112,6 +110,15 @@ namespace atcoder
             string[] s = Console.ReadLine().Split(' ');
             long[] num = s.Select(x=>long.Parse(x)).ToArray();
             return num;
+        }
+        public static string[] getStringArray(int n)
+        {
+            var s = new string[n];
+            for(int i=0; i<n; i++)
+            {
+                s[i] = Console.ReadLine();
+            }
+            return s;
         }
     }
 

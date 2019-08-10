@@ -104,13 +104,7 @@ namespace atcoder
         }
 
     }
-        class Output
-    {
-        public static void writeInt(int i)
-        {
-            Console.WriteLine(i);
-        }
-    }
+
     
     
 }

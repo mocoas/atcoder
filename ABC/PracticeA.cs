@@ -79,12 +79,4 @@ namespace atcoder.ABC.A
             return num;
         }
     }
-
-    class Output
-    {
-        public static void writeInt(int i)
-        {
-            Console.WriteLine(i);
-        }
-    }
 }
