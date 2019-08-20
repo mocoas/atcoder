@@ -6,7 +6,7 @@ namespace atcoder
     {
         public static bool BuildStairs()
         {
-            int n = Input.getInt();
+            int n = int.Parse(Console.ReadLine());
             long[] h = Input.getLongArray();
            
             if(n==1) return true;
@@ -29,7 +29,7 @@ namespace atcoder
 
         public static void UnevenNumbers()
         {
-            int n = Input.getInt();
+            int n = int.Parse(Console.ReadLine());
             int cnt = 0;
             if(n<10) cnt = n%10;
             if(10<= n && n < 100)

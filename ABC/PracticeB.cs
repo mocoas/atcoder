@@ -40,11 +40,11 @@ namespace atcoder
                 }
             }
 
-            Output.writeInt(cnt);
+            Console.WriteLine(cnt);
         }
         public static void OrdinaryNumber()
         {
-            int n = Input.getInt();
+            int n = int.Parse(Console.ReadLine());
             int[] p = Input.getIntArray();
 
             int cnt = 0;
@@ -53,7 +53,7 @@ namespace atcoder
                 if(p[i-1]<p[i] && p[i]<p[i+1] || p[i-1]>p[i] && p[i]>p[i+1]) cnt ++;                
             }
 
-            Output.writeInt(cnt);
+            Console.WriteLine(cnt);
         }
         public static void BiteEating()
         {
@@ -87,7 +87,7 @@ namespace atcoder
                 }                    
             }
 
-            Output.writeInt(result);
+            Console.WriteLine(result);
         }
 
         public static void GoldenApple()
@@ -100,7 +100,7 @@ namespace atcoder
             // ++ * ++ ++ * ++ ++ * ++
             
             human = decimal.ToInt32(Math.Ceiling(n / (d + d + 1)));
-            Output.writeInt(human);
+            Console.WriteLine(human);
         }
 
     }

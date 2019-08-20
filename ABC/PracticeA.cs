@@ -17,7 +17,7 @@ namespace atcoder.ABC.A
         {
             int r = Input.getInt();
             int d = 3 * r * r ;
-            Output.writeInt(d);   
+            Console.WriteLine(d);   
         }
 
         public static void TorT()
@@ -26,10 +26,10 @@ namespace atcoder.ABC.A
             int train = num[0] * num[1];
             if(train>num[2]) 
             {
-                Output.writeInt(num[2]);
+                Console.WriteLine(num[2]);
             }
             else{
-                Output.writeInt(train);
+                Console.WriteLine(train);
             }
         }
         public static void FiftyFifty()
