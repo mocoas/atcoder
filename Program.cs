@@ -8,7 +8,32 @@ namespace atcoder
     {
         static void Main(string[] args)
         {
-            ABC138.Alchemist();
+            int n = int.Parse(Console.ReadLine());
+            var a = Console.ReadLine().Split(' ');
+            int[] w = a.Select(x=>int.Parse(x)).ToArray();
+        
+            int sum = w.Sum();
+            int result =0;
+
+            for(int i = 0; i<n; i++)
+            {
+                int s1 = 0;
+                int s2 = 0;
+
+                for(int j = 0; j<=i; j++)
+                {
+                    s1= s1 + w[j];
+                }
+                s2 = sum-s1;
+                
+                if(result < Math.Abs(s2-s1))
+                {
+                    result = Math.Abs(s2-s1);
+                }
+
+            }
+
+            Console.WriteLine(result);
         }
     }
 
