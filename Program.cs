@@ -13,9 +13,9 @@ namespace atcoder
             int[] w = a.Select(x=>int.Parse(x)).ToArray();
         
             int sum = w.Sum();
-            int result =0;
+            int result =sum;
 
-            for(int i = 0; i<n; i++)
+            for(int i = 0; i<n-1; i++)
             {
                 int s1 = 0;
                 int s2 = 0;
@@ -26,7 +26,7 @@ namespace atcoder
                 }
                 s2 = sum-s1;
                 
-                if(result < Math.Abs(s2-s1))
+                if(result > Math.Abs(s2-s1))
                 {
                     result = Math.Abs(s2-s1);
                 }
