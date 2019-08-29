@@ -6,22 +6,18 @@ namespace atcoder {
     class Program {
         static void Main (string[] args)
          {
-            int n = int.Parse (Console.ReadLine ());
-            var dic = new Dictionary<Tuple<int,string>,int>();
-            string[] s = Input.getStringArray (n);
+            var num = Input.getIntArray();
+            int r = num[0];
+            int d = num[1];
+            int tmp = num[2];
+            int result = 0;
 
-            for (int i = 0; i < n; i++) {
-
-                var str = s[i].Split (' ');
-                dic.Add(Tuple.Create(i+1,str[0]), int.Parse(str[1]));
-
-            }
-
-            foreach(var item in dic.OrderBy(x => x.Key.Item2).ThenByDescending(x => x.Value))
+            for (int i = 0; i < 10; i++)
             {
-                Console.WriteLine(item.Key.Item1);
+                result = r * tmp - d;
+                Console.WriteLine(result);
+                tmp = result;
             }
-
         }
     }
 
