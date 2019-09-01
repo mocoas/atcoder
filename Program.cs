@@ -5,20 +5,78 @@ using System.Linq;
 namespace atcoder {
     class Program {
         static void Main (string[] args)
-         {
-            var num = Input.getIntArray();
-            int r = num[0];
-            int d = num[1];
-            int tmp = num[2];
-            int result = 0;
-
-            for (int i = 0; i < 10; i++)
-            {
-                result = r * tmp - d;
-                Console.WriteLine(result);
-                tmp = result;
-            }
+        {
+            ABC139.PowerSocket();
         }
+    }
+
+    class ABC139
+    {
+        public static void Lower()
+        {
+            int n = int.Parse(Console.ReadLine());
+            var hight = Input.getIntArray();
+            int point = 0;
+            int max = 0;
+            int tmp = 0 ;
+            int i = 0;
+
+            while(i<n-1)
+            {
+                if(hight[i]>=hight[i+1])
+                {
+                    tmp++;    
+                    
+                    if(tmp > max)
+                    {
+                        max = tmp;
+                    }
+                }
+                else
+                {
+                    tmp=0;
+                }
+                
+                i++;
+            }
+
+            Console.WriteLine(max);
+        }
+        public static void PowerSocket()
+        {
+            var s = Input.getIntArray();
+            int a = s[0];
+            int b = s[1];
+
+            int tap = 0;
+            if(b<=a)
+            {
+                tap=1;
+            }
+            else
+            {
+                tap = (int)Math.Ceiling((double)(b-a)/(a-1)) + 1;
+            }        
+
+            Console.WriteLine(tap);
+        }
+        public static void Tenki()
+        {
+            var s = Console.ReadLine();
+            var t = Console.ReadLine();
+            int cnt = 0;
+
+            for(int i=0; i<3; i++)
+            {
+                if(s[i]==t[i])
+                {
+                    cnt++;
+                }
+            }
+            Console.WriteLine(cnt);
+        }
+
+    
     }
 
     class Output {
