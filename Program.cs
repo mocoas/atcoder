@@ -7,7 +7,7 @@ namespace atcoder {
     {
         static void Main (string[] args)
         {
-            ABC140.Buffet();
+            ABC140.MaximalValue();
         }
     }
 
@@ -37,5 +37,28 @@ namespace atcoder {
             Console.WriteLine(result);
         }
 
+        public static void MaximalValue()
+        {
+            int n = int.Parse(Console.ReadLine());
+            var b = Input.getIntArray();
+            int[] a = new int[n];
+            a[0] = b[0];
+            a[n - 1] = b[n - 2];
+
+            for (int i = 1; i <= n - 2; i++)
+            {
+                if (b[i-1] >= b[i])
+                {
+                    a[i] = b[i];
+                }
+                else
+                {
+                    a[i] = b[i + 1];
+                }
+            }
+
+            Console.WriteLine(a.Sum(x=>x));
+
+        }
     }
 }
